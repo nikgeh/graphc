@@ -26,6 +26,7 @@
 		24FB269513D7E39A005C788E /* CalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB269413D7E39A005C788E /* CalculatorTest.m */; };
 		24FB269913D7E85D005C788E /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB269713D7E85D005C788E /* GraphViewController.m */; };
 		24FB269A13D7E85D005C788E /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24FB269813D7E85D005C788E /* GraphViewController.xib */; };
+		24FB26AD13D7F69D005C788E /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB26AC13D7F69D005C788E /* GraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		24FB269613D7E85D005C788E /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		24FB269713D7E85D005C788E /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		24FB269813D7E85D005C788E /* GraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
+		24FB26AB13D7F69D005C788E /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		24FB26AC13D7F69D005C788E /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				24FB269713D7E85D005C788E /* GraphViewController.m */,
 				24FB269813D7E85D005C788E /* GraphViewController.xib */,
 				24FB265F13D7E30F005C788E /* Graphical_CalculatorAppDelegate.h */,
+				24FB26AB13D7F69D005C788E /* GraphView.h */,
+				24FB26AC13D7F69D005C788E /* GraphView.m */,
 				24FB266013D7E30F005C788E /* Graphical_CalculatorAppDelegate.m */,
 				24FB266213D7E30F005C788E /* MainWindow.xib */,
 				24FB265713D7E30F005C788E /* Supporting Files */,
@@ -284,6 +289,7 @@
 				24FB268D13D7E35D005C788E /* CalculatorBrain.m in Sources */,
 				24FB269113D7E36F005C788E /* CalculatorViewController.m in Sources */,
 				24FB269913D7E85D005C788E /* GraphViewController.m in Sources */,
+				24FB26AD13D7F69D005C788E /* GraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +463,7 @@
 				24FB267F13D7E30F005C788E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		24FB268013D7E30F005C788E /* Build configuration list for PBXNativeTarget "Graphical CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +472,7 @@
 				24FB268213D7E30F005C788E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
