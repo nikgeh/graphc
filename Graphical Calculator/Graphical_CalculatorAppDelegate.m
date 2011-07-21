@@ -7,8 +7,13 @@
 //
 
 #import "Graphical_CalculatorAppDelegate.h"
+#import "CalculatorViewController.h"
 
 @implementation Graphical_CalculatorAppDelegate
+
+- (BOOL) iPad {
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+}
 
 
 @synthesize window=_window;
@@ -16,6 +21,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // This root controller is never freed, so we don't usually have to dealloc it
+    UINavigationController *navcon = [[UINavigationController alloc] init];
+    
+    CalculatorViewController *cvc = [[CalculatorViewController alloc] init];
+    [navcon pushViewController:cvc animated:NO];
+
+    if (self.iPad) {
+        // TODO implement this
+    } else {
+        [self.window addSubview:navcon.view];
+    }
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

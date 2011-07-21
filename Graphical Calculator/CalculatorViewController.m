@@ -138,6 +138,7 @@
 {
     // Initialize the brain
     [self initComponents];
+    self.title = @"Calculator";
     [super viewDidLoad];
 }
 
