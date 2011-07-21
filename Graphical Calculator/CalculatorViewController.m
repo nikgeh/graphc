@@ -11,12 +11,23 @@
 @interface CalculatorViewController()
 - (void)initComponents;
 - (void)releaseComponents;
+- (void)solveExpressionWithVariables;
+- (void)solveExpressionWithoutVariables;
+
 @property (retain) CalculatorBrain *brain;
 @end
 
 
 @implementation CalculatorViewController
 @synthesize brain;
+
+- (GraphViewController *) graphViewController {
+    // Lazy load
+    if (!internalGraphViewController) {
+        internalGraphViewController = [[GraphViewController alloc] init];
+    }
+    return internalGraphViewController;
+}
 
 - (void)initComponents
 {
@@ -28,6 +39,7 @@
 - (void)releaseComponents
 {
     brain = nil;
+    [internalGraphViewController release];
 }
 
 - (void)updateDisplayWithResult:(NSDictionary *)variableValues
@@ -94,31 +106,43 @@
 
 - (IBAction)solveExpression:(id)sender 
 {
+    if ([CalculatorBrain variablesInExpression:brain.expression]) {
+        [self solveExpressionWithVariables];
+    } else {
+        [self solveExpressionWithoutVariables];
+    }
+}
+
+- (void)solveExpressionWithoutVariables
+{
     NSString *expression = [CalculatorBrain descriptionOfExpression:brain.expression];
     NSMutableString *sb = [[NSMutableString alloc] initWithString:expression];
     if (![expression hasSuffix:@"="]) {
         [sb appendString:@"="];
     }
     [sb appendString:@" "];
-
-    // Create fake dictionary
-    NSMutableDictionary *expressionsDict = [[NSMutableDictionary alloc] init];
-    [expressionsDict setValue:[NSNumber numberWithInt:17] forKey:@"x"];
-    [expressionsDict setValue:[NSNumber numberWithDouble:35.781] forKey:@"y"];
-    [expressionsDict setValue:[NSNumber numberWithDouble:14] forKey:@"z"];
     
     double result = [CalculatorBrain evaluateExpression:brain.expression
-                                    usingVariableValues:expressionsDict];
-    [expressionsDict release];
+                                    usingVariableValues:nil];
 
     [sb appendString:[NSString stringWithFormat:@"%g", result]];
     display.text = sb;
     [sb release];
 }
 
+- (void)solveExpressionWithVariables
+{
+    // Slide in Graph View Controller
+    GraphViewController *gvc = self.graphViewController;
+    if (gvc.view.window == nil) {
+        [self.navigationController pushViewController:gvc animated:YES];
+    }
+}
+
+
 - (void)dealloc
 {
-    [self initComponents];
+    [self releaseComponents];
     [super dealloc];
 }
 

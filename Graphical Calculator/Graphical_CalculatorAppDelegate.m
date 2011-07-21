@@ -17,22 +17,24 @@
 
 
 @synthesize window=_window;
+@synthesize navCon;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
     // This root controller is never freed, so we don't usually have to dealloc it
-    UINavigationController *navcon = [[UINavigationController alloc] init];
+    navCon = [[UINavigationController alloc] init];
     
     CalculatorViewController *cvc = [[CalculatorViewController alloc] init];
-    [navcon pushViewController:cvc animated:NO];
+    [navCon pushViewController:cvc animated:NO];
 
     if (self.iPad) {
         // TODO implement this
     } else {
-        [self.window addSubview:navcon.view];
+        [self.window addSubview:navCon.view];
     }
+    [cvc release];
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -80,6 +82,7 @@
 - (void)dealloc
 {
     [_window release];
+    [navCon release];
     [super dealloc];
 }
 

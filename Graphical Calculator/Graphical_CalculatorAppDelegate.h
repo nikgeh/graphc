@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface Graphical_CalculatorAppDelegate : NSObject <UIApplicationDelegate> {
-
+    UINavigationController *navCon;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (retain) UINavigationController *navCon;
 
 @end
