@@ -20,6 +20,10 @@
 		24FB267513D7E30F005C788E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24FB267313D7E30F005C788E /* InfoPlist.strings */; };
 		24FB267813D7E30F005C788E /* Graphical_CalculatorTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 24FB267713D7E30F005C788E /* Graphical_CalculatorTests.h */; };
 		24FB267A13D7E30F005C788E /* Graphical_CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB267913D7E30F005C788E /* Graphical_CalculatorTests.m */; };
+		24FB268D13D7E35D005C788E /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB268C13D7E35D005C788E /* CalculatorBrain.m */; };
+		24FB269113D7E36F005C788E /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB268F13D7E36F005C788E /* CalculatorViewController.m */; };
+		24FB269213D7E36F005C788E /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24FB269013D7E36F005C788E /* CalculatorViewController.xib */; };
+		24FB269513D7E39A005C788E /* CalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB269413D7E39A005C788E /* CalculatorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,19 +41,26 @@
 		24FB265013D7E30F005C788E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24FB265213D7E30F005C788E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24FB265413D7E30F005C788E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		24FB265813D7E30F005C788E /* Graphical Calculator-Info.plist */ = {isa = PBXFileReference; path = "Graphical Calculator-Info.plist"; sourceTree = "<group>"; };
+		24FB265813D7E30F005C788E /* Graphical Calculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Graphical Calculator-Info.plist"; sourceTree = "<group>"; };
 		24FB265A13D7E30F005C788E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		24FB265C13D7E30F005C788E /* Graphical Calculator-Prefix.pch */ = {isa = PBXFileReference; path = "Graphical Calculator-Prefix.pch"; sourceTree = "<group>"; };
+		24FB265C13D7E30F005C788E /* Graphical Calculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Graphical Calculator-Prefix.pch"; sourceTree = "<group>"; };
 		24FB265D13D7E30F005C788E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		24FB265F13D7E30F005C788E /* Graphical_CalculatorAppDelegate.h */ = {isa = PBXFileReference; path = Graphical_CalculatorAppDelegate.h; sourceTree = "<group>"; };
+		24FB265F13D7E30F005C788E /* Graphical_CalculatorAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graphical_CalculatorAppDelegate.h; sourceTree = "<group>"; };
 		24FB266013D7E30F005C788E /* Graphical_CalculatorAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Graphical_CalculatorAppDelegate.m; sourceTree = "<group>"; };
 		24FB266313D7E30F005C788E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		24FB266A13D7E30F005C788E /* Graphical CalculatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Graphical CalculatorTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		24FB267213D7E30F005C788E /* Graphical CalculatorTests-Info.plist */ = {isa = PBXFileReference; path = "Graphical CalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		24FB267213D7E30F005C788E /* Graphical CalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Graphical CalculatorTests-Info.plist"; sourceTree = "<group>"; };
 		24FB267413D7E30F005C788E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		24FB267613D7E30F005C788E /* Graphical CalculatorTests-Prefix.pch */ = {isa = PBXFileReference; path = "Graphical CalculatorTests-Prefix.pch"; sourceTree = "<group>"; };
+		24FB267613D7E30F005C788E /* Graphical CalculatorTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Graphical CalculatorTests-Prefix.pch"; sourceTree = "<group>"; };
 		24FB267713D7E30F005C788E /* Graphical_CalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graphical_CalculatorTests.h; sourceTree = "<group>"; };
 		24FB267913D7E30F005C788E /* Graphical_CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Graphical_CalculatorTests.m; sourceTree = "<group>"; };
+		24FB268B13D7E35D005C788E /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		24FB268C13D7E35D005C788E /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
+		24FB268E13D7E36F005C788E /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
+		24FB268F13D7E36F005C788E /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
+		24FB269013D7E36F005C788E /* CalculatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
+		24FB269313D7E39A005C788E /* CalculatorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorTest.h; sourceTree = "<group>"; };
+		24FB269413D7E39A005C788E /* CalculatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +119,12 @@
 		24FB265613D7E30F005C788E /* Graphical Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				24FB268E13D7E36F005C788E /* CalculatorViewController.h */,
+				24FB268F13D7E36F005C788E /* CalculatorViewController.m */,
+				24FB269013D7E36F005C788E /* CalculatorViewController.xib */,
 				24FB265F13D7E30F005C788E /* Graphical_CalculatorAppDelegate.h */,
+				24FB268B13D7E35D005C788E /* CalculatorBrain.h */,
+				24FB268C13D7E35D005C788E /* CalculatorBrain.m */,
 				24FB266013D7E30F005C788E /* Graphical_CalculatorAppDelegate.m */,
 				24FB266213D7E30F005C788E /* MainWindow.xib */,
 				24FB265713D7E30F005C788E /* Supporting Files */,
@@ -130,6 +146,8 @@
 		24FB267013D7E30F005C788E /* Graphical CalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				24FB269313D7E39A005C788E /* CalculatorTest.h */,
+				24FB269413D7E39A005C788E /* CalculatorTest.m */,
 				24FB267713D7E30F005C788E /* Graphical_CalculatorTests.h */,
 				24FB267913D7E30F005C788E /* Graphical_CalculatorTests.m */,
 				24FB267113D7E30F005C788E /* Supporting Files */,
@@ -216,6 +234,7 @@
 			files = (
 				24FB265B13D7E30F005C788E /* InfoPlist.strings in Resources */,
 				24FB266413D7E30F005C788E /* MainWindow.xib in Resources */,
+				24FB269213D7E36F005C788E /* CalculatorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +272,8 @@
 			files = (
 				24FB265E13D7E30F005C788E /* main.m in Sources */,
 				24FB266113D7E30F005C788E /* Graphical_CalculatorAppDelegate.m in Sources */,
+				24FB268D13D7E35D005C788E /* CalculatorBrain.m in Sources */,
+				24FB269113D7E36F005C788E /* CalculatorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24FB267A13D7E30F005C788E /* Graphical_CalculatorTests.m in Sources */,
+				24FB269513D7E39A005C788E /* CalculatorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in Graphical CalculatorTests");
+    //STFail(@"Unit tests are not implemented yet in Graphical CalculatorTests");
 }
 
 @end
