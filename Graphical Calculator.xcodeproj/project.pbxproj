@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24E2E03A13D932B500A40F61 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2E03913D932B500A40F61 /* AxesDrawer.m */; };
 		24FB265113D7E30F005C788E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265013D7E30F005C788E /* UIKit.framework */; };
 		24FB265313D7E30F005C788E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265213D7E30F005C788E /* Foundation.framework */; };
 		24FB265513D7E30F005C788E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265413D7E30F005C788E /* CoreGraphics.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24E2E03813D932B500A40F61 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
+		24E2E03913D932B500A40F61 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
 		24FB264C13D7E30F005C788E /* Graphical Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graphical Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FB265013D7E30F005C788E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24FB265213D7E30F005C788E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24E2E03713D932B500A40F61 /* AxesDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				24E2E03813D932B500A40F61 /* AxesDrawer.h */,
+				24E2E03913D932B500A40F61 /* AxesDrawer.m */,
+			);
+			path = AxesDrawer;
+			sourceTree = "<group>";
+		};
 		24FB264113D7E30F005C788E = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +152,7 @@
 				24FB26AC13D7F69D005C788E /* GraphView.m */,
 				24FB266013D7E30F005C788E /* Graphical_CalculatorAppDelegate.m */,
 				24FB266213D7E30F005C788E /* MainWindow.xib */,
+				24E2E03713D932B500A40F61 /* AxesDrawer */,
 				24FB265713D7E30F005C788E /* Supporting Files */,
 			);
 			path = "Graphical Calculator";
@@ -290,6 +303,7 @@
 				24FB269113D7E36F005C788E /* CalculatorViewController.m in Sources */,
 				24FB269913D7E85D005C788E /* GraphViewController.m in Sources */,
 				24FB26AD13D7F69D005C788E /* GraphView.m in Sources */,
+				24E2E03A13D932B500A40F61 /* AxesDrawer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

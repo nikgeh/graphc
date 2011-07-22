@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GraphViewDelegate
+@end
+
 
 @interface GraphView : UIView {
-    
+    CGFloat scale; // Added in Lecture 8 to handle pinch
+    id <GraphViewDelegate> delegate;
 }
+
+- (void)zoomIn;
+- (void)zoomOut;
+
+
+@property CGFloat scale;
+@property (assign) id <GraphViewDelegate> delegate;
 
 @end
