@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol GraphViewDelegate
-@end
-
+#import "GraphViewDelegate.h"
 
 @interface GraphView : UIView {
     CGFloat scale; // Added in Lecture 8 to handle pinch

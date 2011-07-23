@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "GraphView.h"
 
-@interface GraphViewController : UIViewController<GraphViewDelegate> {
-    
+@interface GraphViewController : UIViewController {
     IBOutlet GraphView *graphView;
+    id <GraphViewDelegate> delegate;
 }
 
 @property (retain) IBOutlet GraphView *graphView;
+@property (assign) id <GraphViewDelegate> delegate;
 
 - (IBAction)zoomIn:(UIButton *)sender;
 - (IBAction)zoomOut:(UIButton *)sender;

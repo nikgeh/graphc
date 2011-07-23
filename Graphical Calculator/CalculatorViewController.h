@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CalculatorBrain.h"
 #import "GraphViewController.h"
+#import "GraphViewDelegate.h"
 
-@interface CalculatorViewController : UIViewController {
+@interface CalculatorViewController : UIViewController<GraphViewDelegate> {
     CalculatorBrain *brain;
     GraphViewController *internalGraphViewController;
     IBOutlet UILabel *display;
@@ -24,5 +25,8 @@
 - (IBAction)variablePressed:(UIButton *)sender;
 - (IBAction)clearPressed:(UIButton *)sender;
 - (IBAction)solveExpression:(id)sender;
+
+- (double)resultForVariable:(double) x;
+
 
 @end

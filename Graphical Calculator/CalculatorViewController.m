@@ -25,6 +25,7 @@
     // Lazy load
     if (!internalGraphViewController) {
         internalGraphViewController = [[GraphViewController alloc] init];
+        internalGraphViewController.delegate = self;
     }
     return internalGraphViewController;
 }
@@ -82,13 +83,17 @@
     }
 }
 
+- (void)flushNumber
+{
+    // Update the operand to the number the the user has currently typed so far
+    [brain setOperand:[display.text doubleValue]];
+    isTypingNumber = NO;
+}
 
 - (IBAction)operationPressed:(UIButton *)sender 
 {
     if (isTypingNumber) {
-        // Update the operand to the number the the user has currently typed so far
-        [brain setOperand:[display.text doubleValue]];
-        isTypingNumber = NO;
+        [self flushNumber];
     }
     NSString *operation = [[sender titleLabel] text];
     /*double result = */[brain performOperation:operation];
@@ -106,6 +111,12 @@
 
 - (IBAction)solveExpression:(id)sender 
 {
+    if (isTypingNumber) {
+        [self flushNumber];
+        // hack. Should try and refactor this.
+        [brain performOperation:@"="];
+    }
+    
     if ([CalculatorBrain variablesInExpression:brain.expression]) {
         [self solveExpressionWithVariables];
     } else {
@@ -179,6 +190,21 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+#pragma mark - Protocol GraphViewDelegate
+
+- (double)resultForVariable:(double) x
+{
+    NSMutableDictionary *expressionsDict = [[NSMutableDictionary alloc] init];
+    // TODO: Constant?
+    [expressionsDict setValue:[NSNumber numberWithDouble:x] forKey:@"x"];
+    
+    double result = [CalculatorBrain evaluateExpression:self.brain.expression 
+                                    usingVariableValues:expressionsDict];
+    [expressionsDict release];
+    return result;
 }
 
 @end

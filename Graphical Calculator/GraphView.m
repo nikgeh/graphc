@@ -77,9 +77,31 @@
     }
 }
 
-- (double)getXValueFromPoint:(CGFloat)pointX
+- (double)getXCoordFromPoint:(CGFloat)pointX pointXAtZero:(CGFloat)midX 
+                       scale:(CGFloat)pointsPerUnit
 {
-    return 0.0;
+    return (pointX-midX)/pointsPerUnit;
+}
+
+- (CGPoint)getPointFromCoord:(CGRect)rect x:(CGFloat)x y:(CGFloat)y
+                       scale:(CGFloat)pointsPerUnit
+{
+    CGPoint point;
+    CGPoint midPoint;
+	midPoint.x = rect.origin.x + rect.size.width/2;
+	midPoint.y = rect.origin.y + rect.size.height/2;
+    
+    point.x = x*pointsPerUnit + midPoint.x + rect.origin.x;
+    CGFloat yVal = y*pointsPerUnit + midPoint.y;
+    point.y = rect.origin.y + rect.size.height - yVal;
+    
+    return point;
+}
+
+- (double) getYCoordFromXCoord:(double) x
+{
+    return [self.delegate resultForVariable:x];
+    //return sin(x);
 }
 
 - (void)drawRect:(CGRect)rect
@@ -92,11 +114,36 @@
     
     [AxesDrawer drawAxesInRect:axesBounds originAtPoint:midPoint scale:self.scale];
     
-    // Draw the graph
-    CGFloat maxPointX = self.bounds.origin.x + self.bounds.size.width;
-    for (CGFloat pointX = self.bounds.origin.x; pointX < maxPointX; pointX+= 1.0) {
+    // Plot the graph
+    CGRect plotBounds = self.bounds;    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIGraphicsPushContext(context);
+    [[UIColor blueColor] setStroke];
+
+    CGContextSetLineWidth(context, 5.0);
+
+    CGContextBeginPath(context);
+    
+    CGFloat maxPointX = plotBounds.origin.x + plotBounds.size.width;
+    BOOL firstLine = YES;
+    for (CGFloat pointX = plotBounds.origin.x; pointX < maxPointX; pointX+= 1.0) {
+        double xCoord = [self getXCoordFromPoint:pointX pointXAtZero:midPoint.x scale:self.scale];
+        double yCoord = [self getYCoordFromXCoord:xCoord];
+        
+        CGPoint point = [self getPointFromCoord:plotBounds x:xCoord y:yCoord scale:self.scale];
+
+        if (firstLine) {
+            firstLine = NO;
+        } else {
+            CGContextAddLineToPoint(context, point.x, point.y);
+            CGContextStrokePath(context);
+        }
+        CGContextMoveToPoint(context, point.x, point.y);
         
     }
+
+    UIGraphicsPopContext();
+
 }
 
          

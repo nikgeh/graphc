@@ -11,6 +11,7 @@
 
 @implementation GraphViewController
 
+@synthesize delegate;
 @synthesize graphView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -52,7 +53,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.graphView.delegate = self;
+    self.graphView.delegate = self.delegate;
     
     // Set up pinch recognizer
     /*UIGestureRecognizer *pinchGr = [[UIPinchGestureRecognizer alloc] 
@@ -89,4 +90,5 @@
     [self.graphView zoomOut];
     [self.graphView setNeedsDisplay];
 }
+
 @end

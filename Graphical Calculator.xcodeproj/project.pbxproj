@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		247200F013DB8A6500C48625 /* GraphViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewDelegate.h; sourceTree = "<group>"; };
 		24E2E03813D932B500A40F61 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
 		24E2E03913D932B500A40F61 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
 		24FB264C13D7E30F005C788E /* Graphical Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graphical Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +150,7 @@
 				24FB269813D7E85D005C788E /* GraphViewController.xib */,
 				24FB265F13D7E30F005C788E /* Graphical_CalculatorAppDelegate.h */,
 				24FB26AB13D7F69D005C788E /* GraphView.h */,
+				247200F013DB8A6500C48625 /* GraphViewDelegate.h */,
 				24FB26AC13D7F69D005C788E /* GraphView.m */,
 				24FB266013D7E30F005C788E /* Graphical_CalculatorAppDelegate.m */,
 				24FB266213D7E30F005C788E /* MainWindow.xib */,
