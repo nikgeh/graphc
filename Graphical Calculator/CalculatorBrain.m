@@ -117,6 +117,15 @@
     [self resetElements];
 }
 
+- (void)terminateExpressionWithEquals
+{
+    NSString *expression = [CalculatorBrain descriptionOfExpression:self.expression];
+    if (![expression hasSuffix:@"="]) {
+        [self performOperation:@"="];
+    }
+}
+
+
 // Whether the token is a variable string
 + (BOOL)isVariableString:(NSString *)tokenString
 {

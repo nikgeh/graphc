@@ -60,8 +60,8 @@
                                     initWithTarget:self.graphView 
                                     action:@selector(pinch:)];
     [self.graphView addGestureRecognizer:pinchGr];
-    [pinchGr release];
-    [self updateUI];*/
+    [pinchGr release];*/
+    [self updateUI];
 
 }
 
@@ -71,6 +71,11 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self updateUI];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

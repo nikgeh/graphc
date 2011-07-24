@@ -16,6 +16,7 @@
     GraphViewController *internalGraphViewController;
     IBOutlet UILabel *display;
     BOOL isTypingNumber;
+    BOOL hasTypedEquals;
 }
 
 @property (readonly) GraphViewController *graphViewController;

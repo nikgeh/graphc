@@ -22,6 +22,7 @@
 - (double)performOperation:(NSString *)operation;
 - (void)setVariableAsOperand:(NSString *)variable;
 - (void)clearCalculator;
+- (void)terminateExpressionWithEquals;
 
 @property (readonly) id expression;
 

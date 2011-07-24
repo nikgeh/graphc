@@ -110,13 +110,11 @@
 
 
 - (IBAction)solveExpression:(id)sender 
-{
+{    
     if (isTypingNumber) {
         [self flushNumber];
-        // hack. Should try and refactor this.
-        [brain performOperation:@"="];
     }
-    
+    [self.brain terminateExpressionWithEquals];
     if ([CalculatorBrain variablesInExpression:brain.expression]) {
         [self solveExpressionWithVariables];
     } else {
@@ -128,9 +126,6 @@
 {
     NSString *expression = [CalculatorBrain descriptionOfExpression:brain.expression];
     NSMutableString *sb = [[NSMutableString alloc] initWithString:expression];
-    if (![expression hasSuffix:@"="]) {
-        [sb appendString:@"="];
-    }
     [sb appendString:@" "];
     
     double result = [CalculatorBrain evaluateExpression:brain.expression
@@ -197,6 +192,7 @@
 
 - (double)resultForVariable:(double) x
 {
+    
     NSMutableDictionary *expressionsDict = [[NSMutableDictionary alloc] init];
     // TODO: Constant?
     [expressionsDict setValue:[NSNumber numberWithDouble:x] forKey:@"x"];
