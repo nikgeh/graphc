@@ -140,8 +140,11 @@
 {
     // Slide in Graph View Controller
     GraphViewController *gvc = self.graphViewController;
+    gvc.title = [NSString stringWithFormat:@"%@", [CalculatorBrain descriptionOfExpression:self.brain.expression]];
     if (gvc.view.window == nil) {
         [self.navigationController pushViewController:gvc animated:YES];
+    } else {
+        [gvc updateGraph];
     }
 }
 
@@ -184,7 +187,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 

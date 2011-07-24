@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		244B6A8613DBEA4400BCF20C /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 244B6A8413DBEA4400BCF20C /* MainWindow-iPad.xib */; };
 		24E2E03A13D932B500A40F61 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2E03913D932B500A40F61 /* AxesDrawer.m */; };
 		24FB265113D7E30F005C788E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265013D7E30F005C788E /* UIKit.framework */; };
 		24FB265313D7E30F005C788E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265213D7E30F005C788E /* Foundation.framework */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		244B6A8513DBEA4400BCF20C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		247200F013DB8A6500C48625 /* GraphViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewDelegate.h; sourceTree = "<group>"; };
 		24E2E03813D932B500A40F61 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
 		24E2E03913D932B500A40F61 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		244B6A8313DBEA4200BCF20C /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				244B6A8413DBEA4400BCF20C /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		24E2E03713D932B500A40F61 /* AxesDrawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		24FB265613D7E30F005C788E /* Graphical Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				244B6A8313DBEA4200BCF20C /* iPad */,
 				24FB268B13D7E35D005C788E /* CalculatorBrain.h */,
 				24FB268C13D7E35D005C788E /* CalculatorBrain.m */,
 				24FB268E13D7E36F005C788E /* CalculatorViewController.h */,
@@ -148,10 +159,10 @@
 				24FB269613D7E85D005C788E /* GraphViewController.h */,
 				24FB269713D7E85D005C788E /* GraphViewController.m */,
 				24FB269813D7E85D005C788E /* GraphViewController.xib */,
-				24FB265F13D7E30F005C788E /* Graphical_CalculatorAppDelegate.h */,
 				24FB26AB13D7F69D005C788E /* GraphView.h */,
-				247200F013DB8A6500C48625 /* GraphViewDelegate.h */,
 				24FB26AC13D7F69D005C788E /* GraphView.m */,
+				247200F013DB8A6500C48625 /* GraphViewDelegate.h */,
+				24FB265F13D7E30F005C788E /* Graphical_CalculatorAppDelegate.h */,
 				24FB266013D7E30F005C788E /* Graphical_CalculatorAppDelegate.m */,
 				24FB266213D7E30F005C788E /* MainWindow.xib */,
 				24E2E03713D932B500A40F61 /* AxesDrawer */,
@@ -264,6 +275,7 @@
 				24FB266413D7E30F005C788E /* MainWindow.xib in Resources */,
 				24FB269213D7E36F005C788E /* CalculatorViewController.xib in Resources */,
 				24FB269A13D7E85D005C788E /* GraphViewController.xib in Resources */,
+				244B6A8613DBEA4400BCF20C /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +341,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		244B6A8413DBEA4400BCF20C /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				244B6A8513DBEA4400BCF20C /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			sourceTree = "<group>";
+		};
 		24FB265913D7E30F005C788E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -397,7 +417,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Graphical Calculator/Graphical Calculator-Prefix.pch";
 				INFOPLIST_FILE = "Graphical Calculator/Graphical Calculator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -410,7 +432,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Graphical Calculator/Graphical Calculator-Prefix.pch";
 				INFOPLIST_FILE = "Graphical Calculator/Graphical Calculator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

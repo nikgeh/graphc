@@ -126,7 +126,11 @@
     
     CGFloat maxPointX = plotBounds.origin.x + plotBounds.size.width;
     BOOL firstLine = YES;
-    CGFloat pointIncrement = 1.0/self.contentScaleFactor;
+    
+    CGFloat scaleFactor = [self respondsToSelector:@selector(contentScaleFactor)] ? 
+                            self.contentScaleFactor : 1.0;
+
+    CGFloat pointIncrement = 1.0/scaleFactor;
     for (CGFloat pointX = plotBounds.origin.x; pointX < maxPointX; pointX+= pointIncrement) {
         double xCoord = [self getXCoordFromPoint:pointX pointXAtZero:midPoint.x scale:self.scale];
         double yCoord = [self getYCoordFromXCoord:xCoord];
@@ -140,14 +144,11 @@
             CGContextStrokePath(context);
         }
         CGContextMoveToPoint(context, point.x, point.y);
-        
     }
 
     UIGraphicsPopContext();
 
-}
-
-         
+}         
          
 - (void)dealloc
 {

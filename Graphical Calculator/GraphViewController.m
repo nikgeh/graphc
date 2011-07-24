@@ -78,10 +78,14 @@
     [self updateUI];
 }
 
+- (void)updateGraph
+{
+    [self updateUI];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 - (IBAction)zoomIn:(UIButton *)sender 
@@ -95,5 +99,17 @@
     [self.graphView zoomOut];
     [self.graphView setNeedsDisplay];
 }
+
+#pragma mark UISplitViewControllerDelegate
+
+- (void)splitViewController:(UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)button {
+    self.navigationItem.rightBarButtonItem = nil;
+}
+
+- (void)splitViewController:(UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController:(UIPopoverController*)pc {
+    barButtonItem.title = aViewController.title;
+    self.navigationItem.rightBarButtonItem = barButtonItem;
+}
+
 
 @end

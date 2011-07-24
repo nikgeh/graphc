@@ -30,7 +30,20 @@
     [navCon pushViewController:cvc animated:NO];
 
     if (self.iPad) {
-        // TODO implement this
+        // Create a right nav section: 
+        // Left = CalculatorViewController 
+        // Right = GraphViewController
+        UISplitViewController *svc = [[UISplitViewController alloc] init];
+        UINavigationController *rightNav = [[UINavigationController alloc] init];
+        [rightNav pushViewController:cvc.graphViewController animated:NO];
+        svc.delegate = cvc.graphViewController;
+        svc.viewControllers = [NSArray arrayWithObjects:navCon, rightNav, nil];
+        
+        // Release these 2 controllers, because the split-view controller owns them now
+        [navCon release]; 
+        [rightNav release];
+        
+        [self.window addSubview:svc.view];
     } else {
         [self.window addSubview:navCon.view];
     }

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GraphView.h"
 
-@interface GraphViewController : UIViewController {
+@interface GraphViewController : UIViewController<UISplitViewControllerDelegate> {
     IBOutlet GraphView *graphView;
     id <GraphViewDelegate> delegate;
 }
@@ -19,5 +19,7 @@
 
 - (IBAction)zoomIn:(UIButton *)sender;
 - (IBAction)zoomOut:(UIButton *)sender;
+
+- (void)updateGraph;
 
 @end
