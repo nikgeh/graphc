@@ -18,6 +18,7 @@
 
 @synthesize window=_window;
 @synthesize navCon;
+@synthesize splitViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -44,6 +45,9 @@
         [rightNav release];
         
         [self.window addSubview:svc.view];
+
+        // Assign to property so that it can be collected when we dealloc
+        self.splitViewController = svc;
     } else {
         [self.window addSubview:navCon.view];
     }
@@ -96,6 +100,7 @@
 {
     [_window release];
     [navCon release];
+    self.splitViewController = nil;
     [super dealloc];
 }
 

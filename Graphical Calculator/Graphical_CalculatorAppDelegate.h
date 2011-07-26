@@ -10,9 +10,10 @@
 
 @interface Graphical_CalculatorAppDelegate : NSObject <UIApplicationDelegate> {
     UINavigationController *navCon;
+    UISplitViewController *splitViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (retain) UINavigationController *navCon;
-
+@property (retain) UISplitViewController *splitViewController;
 @end
