@@ -102,18 +102,6 @@
     return YES;
 }
 
-- (IBAction)zoomIn:(UIButton *)sender 
-{
-    [self.graphView zoomIn];
-    [self.graphView setNeedsDisplay];
-}
-
-- (IBAction)zoomOut:(UIButton *)sender 
-{
-    [self.graphView zoomOut];
-    [self.graphView setNeedsDisplay];
-}
-
 #pragma mark UISplitViewControllerDelegate
 
 - (void)splitViewController:(UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)button {

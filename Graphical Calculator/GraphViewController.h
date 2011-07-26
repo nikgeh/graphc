@@ -17,9 +17,6 @@
 @property (retain) IBOutlet GraphView *graphView;
 @property (assign) id <GraphViewDelegate> delegate;
 
-- (IBAction)zoomIn:(UIButton *)sender;
-- (IBAction)zoomOut:(UIButton *)sender;
-
 - (void)updateGraph;
 
 @end
