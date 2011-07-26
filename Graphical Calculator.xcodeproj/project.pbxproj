@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		244B6A8613DBEA4400BCF20C /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 244B6A8413DBEA4400BCF20C /* MainWindow-iPad.xib */; };
+		246DB36E13DE6F2300ED74C8 /* GraphDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 246DB36D13DE6F2300ED74C8 /* GraphDrawer.m */; };
+		246DB37013DE700200ED74C8 /* TODO-LIST in Resources */ = {isa = PBXBuildFile; fileRef = 246DB36F13DE700200ED74C8 /* TODO-LIST */; };
 		24E2E03A13D932B500A40F61 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2E03913D932B500A40F61 /* AxesDrawer.m */; };
 		24FB265113D7E30F005C788E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265013D7E30F005C788E /* UIKit.framework */; };
 		24FB265313D7E30F005C788E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265213D7E30F005C788E /* Foundation.framework */; };
@@ -43,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		244B6A8513DBEA4400BCF20C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		246DB36C13DE6F2300ED74C8 /* GraphDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphDrawer.h; sourceTree = "<group>"; };
+		246DB36D13DE6F2300ED74C8 /* GraphDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphDrawer.m; sourceTree = "<group>"; };
+		246DB36F13DE700200ED74C8 /* TODO-LIST */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TODO-LIST"; sourceTree = "<group>"; };
 		247200F013DB8A6500C48625 /* GraphViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewDelegate.h; sourceTree = "<group>"; };
 		24E2E03813D932B500A40F61 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
 		24E2E03913D932B500A40F61 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
@@ -109,6 +114,15 @@
 			name = iPad;
 			sourceTree = "<group>";
 		};
+		246DB36B13DE6F0300ED74C8 /* GraphDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				246DB36C13DE6F2300ED74C8 /* GraphDrawer.h */,
+				246DB36D13DE6F2300ED74C8 /* GraphDrawer.m */,
+			);
+			name = GraphDrawer;
+			sourceTree = "<group>";
+		};
 		24E2E03713D932B500A40F61 /* AxesDrawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +164,7 @@
 		24FB265613D7E30F005C788E /* Graphical Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				246DB36F13DE700200ED74C8 /* TODO-LIST */,
 				244B6A8313DBEA4200BCF20C /* iPad */,
 				24FB268B13D7E35D005C788E /* CalculatorBrain.h */,
 				24FB268C13D7E35D005C788E /* CalculatorBrain.m */,
@@ -166,6 +181,7 @@
 				24FB266013D7E30F005C788E /* Graphical_CalculatorAppDelegate.m */,
 				24FB266213D7E30F005C788E /* MainWindow.xib */,
 				24E2E03713D932B500A40F61 /* AxesDrawer */,
+				246DB36B13DE6F0300ED74C8 /* GraphDrawer */,
 				24FB265713D7E30F005C788E /* Supporting Files */,
 			);
 			path = "Graphical Calculator";
@@ -276,6 +292,7 @@
 				24FB269213D7E36F005C788E /* CalculatorViewController.xib in Resources */,
 				24FB269A13D7E85D005C788E /* GraphViewController.xib in Resources */,
 				244B6A8613DBEA4400BCF20C /* MainWindow-iPad.xib in Resources */,
+				246DB37013DE700200ED74C8 /* TODO-LIST in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +335,7 @@
 				24FB269913D7E85D005C788E /* GraphViewController.m in Sources */,
 				24FB26AD13D7F69D005C788E /* GraphView.m in Sources */,
 				24E2E03A13D932B500A40F61 /* AxesDrawer.m in Sources */,
+				246DB36E13DE6F2300ED74C8 /* GraphDrawer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
