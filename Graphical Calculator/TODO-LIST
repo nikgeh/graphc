@@ -1,5 +1,5 @@
 
 Implement pan
- - bug in graph drawing code... meh.. 
+ - Doesn't always center properly when rotating.
 
 Declarative view? (not from xib)?

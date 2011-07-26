@@ -17,19 +17,11 @@
     return (pointX-midX)/pointsPerUnit;
 }
 
-+ (CGPoint)getPointFromCoord:(CGRect)rect x:(CGFloat)x y:(CGFloat)y
++ (CGPoint)getPointFromCoord:(CGRect)rect origin:(CGPoint)origin x:(CGFloat)x y:(CGFloat)y
                        scale:(CGFloat)pointsPerUnit
 {
-    CGPoint point;
-    CGPoint midPoint;
-	midPoint.x = rect.origin.x + rect.size.width/2;
-	midPoint.y = rect.origin.y + rect.size.height/2;
-    
-    point.x = x*pointsPerUnit + midPoint.x + rect.origin.x;
-    CGFloat yVal = y*pointsPerUnit + midPoint.y;
-    point.y = rect.origin.y + rect.size.height - yVal;
-    
-    return point;
+    return CGPointMake(x*pointsPerUnit + origin.x + rect.origin.x, 
+                       rect.origin.y + origin.y - y*pointsPerUnit);    
 }
 
 + (double) getYCoordFromXCoord:(double)x graphViewDelegate:(id<GraphViewDelegate>)delegate
@@ -62,7 +54,8 @@
                                            scale:pointsPerUnit];
         double yCoord = [self getYCoordFromXCoord:xCoord graphViewDelegate:delegate];
         
-        CGPoint point = [self getPointFromCoord:plotBounds x:xCoord y:yCoord scale:pointsPerUnit];
+        CGPoint point = [self getPointFromCoord:plotBounds origin:graphOrigin 
+                                              x:xCoord y:yCoord scale:pointsPerUnit];
         
         if (firstLine) {
             firstLine = NO;
