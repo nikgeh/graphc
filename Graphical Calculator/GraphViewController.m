@@ -67,7 +67,14 @@
                                     action:@selector(pan:)];
     [self.graphView addGestureRecognizer:panGr];
     [panGr release];
-    
+
+    UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] 
+                                  initWithTarget:self.graphView 
+                                  action:@selector(tap:)];
+    tapGr.numberOfTapsRequired = 2;
+    [self.graphView addGestureRecognizer:tapGr];
+    [tapGr release];
+
     [self updateUI];
 }
 

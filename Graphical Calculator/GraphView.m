@@ -106,6 +106,11 @@
     }
 }
 
+- (void)tap:(UITapGestureRecognizer *)gesture 
+{
+    [self resetOrigin];
+}
+
 - (void)drawRect:(CGRect)rect
 {
     // Draw axes

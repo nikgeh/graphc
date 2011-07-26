@@ -2,4 +2,10 @@
 Implement pan
  - Doesn't always center properly when rotating.
 
+Get rid of zoom buttons
+
+sizing for calculator (Hint 17)
+
+store defaults for calculator
+
 Declarative view? (not from xib)?
