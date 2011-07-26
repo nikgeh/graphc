@@ -61,8 +61,14 @@
                                     action:@selector(pinch:)];
     [self.graphView addGestureRecognizer:pinchGr];
     [pinchGr release];
+    
+    UIGestureRecognizer *panGr = [[UIPanGestureRecognizer alloc] 
+                                    initWithTarget:self.graphView 
+                                    action:@selector(pan:)];
+    [self.graphView addGestureRecognizer:panGr];
+    [panGr release];
+    
     [self updateUI];
-
 }
 
 - (void)viewDidUnload
@@ -75,6 +81,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [self.graphView resetOrigin];
     [self updateUI];
 }
 

@@ -10,13 +10,16 @@
 #import "GraphViewDelegate.h"
 
 @interface GraphView : UIView {
+    @private
     CGFloat scale; // Added in Lecture 8 to handle pinch
     id <GraphViewDelegate> delegate;
+    CGPoint origin;
 }
 
 - (void)zoomIn;
 - (void)zoomOut;
 
+- (void)resetOrigin;
 
 @property CGFloat scale;
 @property (assign) id <GraphViewDelegate> delegate;
