@@ -78,22 +78,21 @@
     }
 }
 
-
-
 - (void)drawRect:(CGRect)rect
 {
     // Draw axes
     CGRect axesBounds = self.bounds;
-    CGPoint midPoint;
-	midPoint.x = self.bounds.origin.x + self.bounds.size.width/2;
-	midPoint.y = self.bounds.origin.y + self.bounds.size.height/2;
+    CGPoint graphOrigin;
+	graphOrigin.x = self.bounds.origin.x + self.bounds.size.width/2;
+	graphOrigin.y = self.bounds.origin.y + self.bounds.size.height/2;
     
-    [AxesDrawer drawAxesInRect:axesBounds originAtPoint:midPoint scale:self.scale];
+    // Draw the axes
+    [AxesDrawer drawAxesInRect:axesBounds originAtPoint:graphOrigin scale:self.scale];
     
     // Plot the graph
     CGFloat scaleFactor = [self respondsToSelector:@selector(contentScaleFactor)] ? 
     self.contentScaleFactor : 1.0;
-    [GraphDrawer drawGraphInRect:axesBounds originAtPoint:midPoint scale:self.scale
+    [GraphDrawer drawGraphInRect:axesBounds originAtPoint:graphOrigin scale:self.scale
        contentScaleFactor:scaleFactor graphViewDelegate:self.delegate];
 
 }         

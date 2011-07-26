@@ -56,11 +56,11 @@
     self.graphView.delegate = self.delegate;
     
     // Set up pinch recognizer
-    /*UIGestureRecognizer *pinchGr = [[UIPinchGestureRecognizer alloc] 
+    UIGestureRecognizer *pinchGr = [[UIPinchGestureRecognizer alloc] 
                                     initWithTarget:self.graphView 
                                     action:@selector(pinch:)];
     [self.graphView addGestureRecognizer:pinchGr];
-    [pinchGr release];*/
+    [pinchGr release];
     [self updateUI];
 
 }
