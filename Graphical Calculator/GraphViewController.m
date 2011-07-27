@@ -86,12 +86,16 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [self.graphView loadOrigin];
     [self.graphView loadScale];
     [self updateUI];
 }
+
+/*- (void)viewDidAppear:(BOOL)animated
+{
+}*/
 
 - (void)updateGraph
 {
@@ -105,13 +109,41 @@
 
 #pragma mark UISplitViewControllerDelegate
 
+/**
+ Reports to the popover controller what size to render the calculator
+ */
+- (CGSize)calculateSizeForViewInPopover
+{
+    // suckage: view expands after first rotation
+    
+    CGRect rect;
+    BOOL first = YES;
+    // create the union of the rect of all the subviews of this controller
+    for (UIView *view in self.view.subviews) {
+        if (first) {
+            rect = view.frame;
+            first = NO;
+        } else {
+            rect = CGRectUnion(rect, view.frame);            
+        }
+    }
+    return rect.size;
+}
+
+/**
+ Called when we are in landscape mode on the iPad
+ */
 - (void)splitViewController:(UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)button {
     self.navigationItem.rightBarButtonItem = nil;
 }
 
+/**
+ Called when we are in portrait mode on the iPad
+ */
 - (void)splitViewController:(UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController:(UIPopoverController*)pc {
     barButtonItem.title = aViewController.title;
     self.navigationItem.rightBarButtonItem = barButtonItem;
+    pc.popoverContentSize = [self calculateSizeForViewInPopover];
 }
 
 
