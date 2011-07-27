@@ -19,9 +19,9 @@
 - (void)zoomIn;
 - (void)zoomOut;
 
-- (void)resetOrigin;
+- (void)loadOrigin;
+- (void)loadScale;
 
-@property CGFloat scale;
 @property (assign) id <GraphViewDelegate> delegate;
 
 @end

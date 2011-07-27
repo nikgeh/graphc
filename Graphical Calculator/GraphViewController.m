@@ -88,7 +88,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.graphView resetOrigin];
+    [self.graphView loadOrigin];
+    [self.graphView loadScale];
     [self updateUI];
 }
 

@@ -10,6 +10,7 @@
 		244B6A8613DBEA4400BCF20C /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 244B6A8413DBEA4400BCF20C /* MainWindow-iPad.xib */; };
 		246DB36E13DE6F2300ED74C8 /* GraphDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 246DB36D13DE6F2300ED74C8 /* GraphDrawer.m */; };
 		246DB37013DE700200ED74C8 /* TODO-LIST in Resources */ = {isa = PBXBuildFile; fileRef = 246DB36F13DE700200ED74C8 /* TODO-LIST */; };
+		2480E96A13DFD3030099BA92 /* GraphUserPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 2480E96913DFD3030099BA92 /* GraphUserPreference.m */; };
 		24E2E03A13D932B500A40F61 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2E03913D932B500A40F61 /* AxesDrawer.m */; };
 		24FB265113D7E30F005C788E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265013D7E30F005C788E /* UIKit.framework */; };
 		24FB265313D7E30F005C788E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265213D7E30F005C788E /* Foundation.framework */; };
@@ -49,6 +50,8 @@
 		246DB36D13DE6F2300ED74C8 /* GraphDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphDrawer.m; sourceTree = "<group>"; };
 		246DB36F13DE700200ED74C8 /* TODO-LIST */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TODO-LIST"; sourceTree = "<group>"; };
 		247200F013DB8A6500C48625 /* GraphViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewDelegate.h; sourceTree = "<group>"; };
+		2480E96813DFD3030099BA92 /* GraphUserPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphUserPreference.h; sourceTree = "<group>"; };
+		2480E96913DFD3030099BA92 /* GraphUserPreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphUserPreference.m; sourceTree = "<group>"; };
 		24E2E03813D932B500A40F61 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
 		24E2E03913D932B500A40F61 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
 		24FB264C13D7E30F005C788E /* Graphical Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graphical Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +126,15 @@
 			name = GraphDrawer;
 			sourceTree = "<group>";
 		};
+		2480E96C13DFD60F0099BA92 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2480E96813DFD3030099BA92 /* GraphUserPreference.h */,
+				2480E96913DFD3030099BA92 /* GraphUserPreference.m */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
 		24E2E03713D932B500A40F61 /* AxesDrawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				246DB36F13DE700200ED74C8 /* TODO-LIST */,
+				2480E96C13DFD60F0099BA92 /* Preferences */,
 				244B6A8313DBEA4200BCF20C /* iPad */,
 				24FB268B13D7E35D005C788E /* CalculatorBrain.h */,
 				24FB268C13D7E35D005C788E /* CalculatorBrain.m */,
@@ -336,6 +349,7 @@
 				24FB26AD13D7F69D005C788E /* GraphView.m in Sources */,
 				24E2E03A13D932B500A40F61 /* AxesDrawer.m in Sources */,
 				246DB36E13DE6F2300ED74C8 /* GraphDrawer.m in Sources */,
+				2480E96A13DFD3030099BA92 /* GraphUserPreference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

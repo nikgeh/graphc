@@ -10,9 +10,17 @@
 #import "AxesDrawer.h"
 #import "GraphDrawer.h"
 
+#import "GraphUserPreference.h"
+
 @interface GraphView()
+
+- (void)resetOrigin;
+
 @property (nonatomic) CGPoint origin;
+@property CGFloat scale;
+
 @end
+
 
 @implementation GraphView
 
@@ -32,7 +40,6 @@
 {
     // Makes the face a proper circle even when you rotate
     self.contentMode = UIViewContentModeRedraw;
-    [self resetOrigin];
 }
 
 - (void)awakeFromNib 
@@ -53,16 +60,20 @@
     self.scale += SCALE_STEP;    
 }
 
-
 - (void)zoomOut
 {
     self.scale -= SCALE_STEP;
 }
 
+- (CGPoint)midPoint
+{
+	return CGPointMake(self.bounds.origin.x + self.bounds.size.width/2,
+                       self.bounds.origin.y + self.bounds.size.height/2);
+}
+
 - (void)resetOrigin
 {
-	self.origin = CGPointMake(self.bounds.origin.x + self.bounds.size.width/2,
-                              self.bounds.origin.y + self.bounds.size.height/2);
+	self.origin = [self midPoint];
 }
 
 
@@ -81,10 +92,34 @@
     }
 }
 
+- (void)loadScale
+{
+    self.scale = [GraphUserPreference getScale];
+}
+
+- (void)saveScale
+{
+    [GraphUserPreference setScale:self.scale];
+}
+
 - (void)setOrigin:(CGPoint)newPoint 
 {
     origin = newPoint;
     [self setNeedsDisplay];
+}
+
+- (void)loadOrigin
+{
+    if ([GraphUserPreference hasOriginPosition]) {
+        self.origin = [GraphUserPreference getOriginPosition];        
+    } else {
+        self.origin = [self midPoint];
+    }
+}
+
+- (void)saveOrigin
+{
+    [GraphUserPreference setOriginPosition:self.origin];
 }
 
 - (void)pinch:(UIPinchGestureRecognizer *)gesture 
@@ -93,6 +128,9 @@
         (gesture.state == UIGestureRecognizerStateEnded)) {
         self.scale *= gesture.scale;
         gesture.scale = 1;
+    }
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        [self saveScale];
     }
 }
 
@@ -104,11 +142,15 @@
         self.origin = CGPointMake(self.origin.x + translation.x, self.origin.y + translation.y);
         [gesture setTranslation:CGPointZero inView:self];
     }
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        [self saveOrigin];
+    }
 }
 
 - (void)tap:(UITapGestureRecognizer *)gesture 
 {
     [self resetOrigin];
+    [self saveOrigin];
 }
 
 - (void)drawRect:(CGRect)rect
