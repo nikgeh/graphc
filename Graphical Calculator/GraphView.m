@@ -122,6 +122,12 @@
     [GraphUserPreference setOriginPosition:self.origin];
 }
 
+/*- (void)saveState
+{
+    [self saveScale];
+    [self saveOrigin];
+}*/
+
 - (void)pinch:(UIPinchGestureRecognizer *)gesture 
 {
     if ((gesture.state == UIGestureRecognizerStateChanged) ||

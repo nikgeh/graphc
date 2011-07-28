@@ -11,6 +11,7 @@
 		246DB36E13DE6F2300ED74C8 /* GraphDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 246DB36D13DE6F2300ED74C8 /* GraphDrawer.m */; };
 		246DB37013DE700200ED74C8 /* TODO-LIST in Resources */ = {isa = PBXBuildFile; fileRef = 246DB36F13DE700200ED74C8 /* TODO-LIST */; };
 		2480E96A13DFD3030099BA92 /* GraphUserPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 2480E96913DFD3030099BA92 /* GraphUserPreference.m */; };
+		2487DE8913E120A300FE2B91 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24FB269813D7E85D005C788E /* GraphViewController.xib */; };
 		24E2E03A13D932B500A40F61 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2E03913D932B500A40F61 /* AxesDrawer.m */; };
 		24FB265113D7E30F005C788E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265013D7E30F005C788E /* UIKit.framework */; };
 		24FB265313D7E30F005C788E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FB265213D7E30F005C788E /* Foundation.framework */; };
@@ -30,7 +31,6 @@
 		24FB269213D7E36F005C788E /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24FB269013D7E36F005C788E /* CalculatorViewController.xib */; };
 		24FB269513D7E39A005C788E /* CalculatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB269413D7E39A005C788E /* CalculatorTest.m */; };
 		24FB269913D7E85D005C788E /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB269713D7E85D005C788E /* GraphViewController.m */; };
-		24FB269A13D7E85D005C788E /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24FB269813D7E85D005C788E /* GraphViewController.xib */; };
 		24FB26AD13D7F69D005C788E /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FB26AC13D7F69D005C788E /* GraphView.m */; };
 /* End PBXBuildFile section */
 
@@ -303,9 +303,9 @@
 				24FB265B13D7E30F005C788E /* InfoPlist.strings in Resources */,
 				24FB266413D7E30F005C788E /* MainWindow.xib in Resources */,
 				24FB269213D7E36F005C788E /* CalculatorViewController.xib in Resources */,
-				24FB269A13D7E85D005C788E /* GraphViewController.xib in Resources */,
 				244B6A8613DBEA4400BCF20C /* MainWindow-iPad.xib in Resources */,
 				246DB37013DE700200ED74C8 /* TODO-LIST in Resources */,
+				2487DE8913E120A300FE2B91 /* GraphViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

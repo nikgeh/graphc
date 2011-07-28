@@ -23,6 +23,21 @@
     return self;
 }
 
+/**
+ Called when we don't have a XIB file and we want to programmatically instantiate the 
+ subview of this controller
+ 
+ To get this method to be called, remove the XIB file from the target
+ */
+/*- (void)loadView
+{
+    GraphView *theGraphView = [[GraphView alloc] initWithFrame:CGRectZero];
+    theGraphView.backgroundColor = [UIColor whiteColor];
+    self.graphView = theGraphView;
+    self.view = theGraphView;
+    [theGraphView release];
+}*/
+
 - (void)releaseOutlets
 {
     self.graphView = nil;
@@ -52,6 +67,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Note: at this point the bounds is not set yet. it's only set at viewWillAppear
     // Do any additional setup after loading the view from its nib.
     self.graphView.delegate = self.delegate;
     
@@ -88,10 +104,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
+    // bounds have been set at this point
     [self.graphView loadOrigin];
     [self.graphView loadScale];
     [self updateUI];
 }
+
+/*- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.graphView saveState];
+}*/
 
 /*- (void)viewDidAppear:(BOOL)animated
 {

@@ -22,6 +22,8 @@
 - (void)loadOrigin;
 - (void)loadScale;
 
+//- (void)saveState;
+
 @property (assign) id <GraphViewDelegate> delegate;
 
 @end
