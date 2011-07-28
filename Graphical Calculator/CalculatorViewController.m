@@ -207,4 +207,24 @@
     return result;
 }
 
+#pragma mark - Calculator View stuff
+
+/**
+ Calculates the size of the subviews combined. For feeding into the popover controller.
+ */
+- (CGSize)calculateUnionOfAllSubviews
+{
+    CGRect rect = self.view.frame;
+    // create the union of the rect of all the subviews of this controller
+    for (UIView *view in self.view.subviews) {
+        rect = CGRectUnion(rect, view.frame);            
+    }
+    return rect.size;
+}
+
+- (CGSize)contentSizeForViewInPopover
+{
+    return [self calculateUnionOfAllSubviews];
+}
+
 @end
